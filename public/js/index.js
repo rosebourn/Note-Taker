@@ -1,9 +1,9 @@
-console.log("jquery is loaded")
 var $noteTitle = $(".note-title");
 var $noteText = $(".note-textarea");
 var $saveNoteBtn = $(".save-note");
 var $newNoteBtn = $(".new-note");
 var $noteList = $(".list-container .list-group");
+
 
 // activeNote is used to keep track of the note in the textarea
 var activeNote = {};
@@ -57,6 +57,7 @@ var handleNoteSave = function() {
     text: $noteText.val()
   };
 
+
   saveNote(newNote).then(function(data) {
     getAndRenderNotes();
     renderActiveNote();
@@ -80,6 +81,7 @@ var handleNoteDelete = function(event) {
     getAndRenderNotes();
     renderActiveNote();
   });
+  location.reload();
 };
 
 // Sets the activeNote and displays it
